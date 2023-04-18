@@ -30,7 +30,7 @@ except IOError as e:
 	print('File Not Found :'+ FilePath)
 	sys.exit(0)
    
-file_header=binary_file.read(4).decode()                        #File Magic String:cook 
+file_header=binary_file.read(4).decode()                         
 
 if str(file_header)!='cook':
 	print("Not a Cookies.binarycookie file")
@@ -124,6 +124,6 @@ for page in pages:
 			va=cookie.read(1)
 		
 
-		print('Cookie: '+name+'='+value+'; domain='+url+'; path='+path+'; '+'expires='+expiry_date+'; '+cookie_flags)
+		print('Cookie: \n\t'+name+'='+value+'; \n\tdomain='+url+'; \n\tpath='+path+'; '+'\n\texpires='+expiry_date+'; \n\t'+cookie_flags)
 		
 binary_file.close()
