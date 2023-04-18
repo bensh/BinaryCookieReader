@@ -1,11 +1,14 @@
 # BinaryCookieReader
 
 Cloned from http://securitylearn.net/wp-content/uploads/tools/iOS/BinaryCookieReader.py
+Written By Satishb3 (http://www.securitylearn.net)
+Updated for Python3 by bensh 
+Original code remains cedit to origianl author
 
 ##Usage
 
 `
-Python BinaryCookieReader.py [Cookie.binarycookies-file-path]
+python3 BinaryCookieReader.py [/path/to/Cookie.binarycookies]
 `
 
 ##Cookies.binarycookies Format
@@ -18,7 +21,6 @@ Cookies.binarycookies file is composed of several pages and each page can have o
 3. Following that, a 4 byte integer for each page, represents the page size.
 4. Next to that, the file contains the actual page content. Each page is of length corresponding to the page size. Page format is explained below.
 5. The file ends with an 8 byte value and it might be file checksum.`
-
 
 
 ###Page Format:
