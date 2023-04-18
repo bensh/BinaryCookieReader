@@ -1,9 +1,13 @@
 # BinaryCookieReader
 
 Cloned from http://securitylearn.net/wp-content/uploads/tools/iOS/BinaryCookieReader.py
+
 Written By Satishb3 (http://www.securitylearn.net)
+
 Updated for Python3 by bensh 
-Original code remains cedit to origianl author
+
+Original code remains credit to original author
+
 
 ##Usage
 
