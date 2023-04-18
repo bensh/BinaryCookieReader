@@ -1,25 +1,28 @@
 # BinaryCookieReader
 
-Cloned from http://securitylearn.net/wp-content/uploads/tools/iOS/BinaryCookieReader.py
-
-Written By Satishb3 (http://www.securitylearn.net)
-
-Updated for Python3 by bensh 
-
-Original code remains credit to original author
+Cloned from http://securitylearn.net/wp-content/uploads/tools/iOS/BinaryCookieReader.py  
+Written By Satishb3 (http://www.securitylearn.net)  
+Updated for Python3 by bensh  
+Original code remains credit to original author  
 
 
-##Usage
+## Usage
 
 `
 python3 BinaryCookieReader.py [/path/to/Cookie.binarycookies]
 `
 
-##Cookies.binarycookies Format
+`Cookie: uid=821779476522201518; domain=.adform.net; path=/; expires=Sat, 04 Apr 2020;`   
+`Cookie: uuid=7735ecf2-77b5-44c5-94de-e4cff2c99960; domain=ads.avocet.io; path=/; expires=Wed, 03 Feb 2021; HttpOnly`    
+`Cookie: personalization_id="v1_8q6Ksn7pDaGx5KbnfnbHYw=="; domain=.twitter.com; path=/; expires=Thu, 03 Feb 2022;`   
+
+
+
+## Cookies.binarycookies Format
 
 Cookies.binarycookies file is composed of several pages and each page can have one or more cookies. The complete file format is explained below:
 
-###File Format:
+### File Format:
 1. The file starts with a 4 byte magic string: cook. It is used to identify the file type.
 2. Next four bytes is an integer specifying the number of pages in the file.
 3. Following that, a 4 byte integer for each page, represents the page size.
@@ -27,14 +30,14 @@ Cookies.binarycookies file is composed of several pages and each page can have o
 5. The file ends with an 8 byte value and it might be file checksum.`
 
 
-###Page Format:
+### Page Format:
 1. Every page starts with a 4 byte page header: 0x00000100.
 2. Next four bytes is an integer specifying the number of cookies in the page.
 3. Following that, a 4 byte integer for each cookie, represents the cookie offset. Offset specifies the start of the cookie in bytes from the start of the page.
 4. Next to that, the page contains the actual cookie contents. Each cookie is of variable length. Cookie format is explained below.
 5. Page ends with a 4 byte value and it is always 0x00000000.
 
-###Cookie Format:
+### Cookie Format:
 1. First 4 bytes in the cookie is the size of the cookie.
 2. The next 4 bytes are unknown (may be related to cookies flags).
 3. The next four bytes are the cookie flags. This is an integer value (1=Secure, 4=HttpOnly, 5= Secure+HttpOnly).
